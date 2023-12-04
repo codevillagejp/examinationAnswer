@@ -7,7 +7,7 @@
 // 田中さんが挨拶しました
 // 山田さんが洗濯しました
 // 名無しさんが勉強しました -> userNameが渡って来なかった時
-// 佐藤さんはなにもしませんでした -> actionが渡って来なかった時
+// 佐藤さんは何もしませんでした -> actionが渡って来なかった時
 
 /**
  * @param {{userName?:string,action?:string}} object
@@ -16,4 +16,9 @@
 
 export const createUserActionString = (object) => {
   //ここに記述
+  const userName = object.userName ? object.userName : "名無し";
+  const action = object.action
+    ? `が${object.action}しました`
+    : "は何もしませんでした";
+  return `${userName}さん${action}`;
 };

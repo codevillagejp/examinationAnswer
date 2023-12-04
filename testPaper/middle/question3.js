@@ -19,4 +19,10 @@
  */
 export const sumAndAverage = (array) => {
   //ここに記述
+  let sum = 0;
+  array.forEach((element) => {
+    sum += element;
+  });
+  const average = Math.round(sum / array.length);
+  return { sum, average };
 };

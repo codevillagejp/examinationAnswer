@@ -35,7 +35,7 @@ ${missTitles.join("\n")}
 
 ### 復習ポイント
 ${Array.from(new Set(missMessages)).join("\n")}
-`,
+`
     );
   });
   questions.forEach((question) => {
@@ -45,7 +45,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
           question.title,
           ({ arg, result, point, hints }) => {
             test(`${question.func.name}(${JSON.stringify(
-              arg,
+              arg
             )}) returns ${JSON.stringify(result)}`, () => {
               try {
                 expect(question.func(arg)).toBe(result);
@@ -60,7 +60,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 throw er;
               }
             });
-          },
+          }
         );
         break;
       case 2:
@@ -68,7 +68,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
           question.title,
           ({ arg, result, point, hints }) => {
             test(`${question.func.name}(${JSON.stringify(
-              arg,
+              arg
             )}) returns ${JSON.stringify(result)}`, () => {
               try {
                 expect(question.func(arg.price, arg.isTakeOut)).toBe(result);
@@ -83,7 +83,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 throw er;
               }
             });
-          },
+          }
         );
         break;
       case 3:
@@ -91,7 +91,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
           question.title,
           ({ arg, result, point, hints }) => {
             test(`${question.func.name}([${JSON.stringify(
-              arg,
+              arg
             )}]) returns ${JSON.stringify(result)}`, () => {
               try {
                 expect(question.func(arg)).toEqual(result);
@@ -106,7 +106,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 throw er;
               }
             });
-          },
+          }
         );
         break;
       case 4:
@@ -114,7 +114,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
           question.title,
           ({ arg, result, point, hints }) => {
             test(`${question.func.name}(${JSON.stringify(
-              arg,
+              arg
             )}) returns ${JSON.stringify(result)}`, () => {
               try {
                 expect(question.func(arg.array, arg.element)).toEqual(result);
@@ -129,7 +129,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 throw er;
               }
             });
-          },
+          }
         );
         break;
       case 5:
@@ -153,7 +153,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 throw er;
               }
             });
-          },
+          }
         );
         break;
       case 6:
@@ -169,7 +169,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 const span = screen.getByText("田中");
                 // 1 spanタグで作っているか
                 expect(span.tagName).toBe("SPAN");
-                // 3 クリックする前にspanタグにスタイルがついていないか
+                // 2 クリックする前にspanタグにスタイルがついていないか
                 expect(span.style.textDecoration).not.toBe("line-through");
                 // 3 クリックした時にspanタグにスタイルがついているか
                 fireEvent.click(checkbox);
@@ -188,7 +188,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 throw er;
               }
             });
-          },
+          }
         );
         break;
       case 7:
@@ -229,7 +229,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 throw er;
               }
             });
-          },
+          }
         );
         break;
       default:

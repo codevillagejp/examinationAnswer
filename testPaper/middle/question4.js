@@ -14,5 +14,13 @@
  *  @return {(string|number)[]}
  */
 export const toggleArrayElement = (array, ele) => {
+  const index = array.indexOf(ele);
   //ここに記述
+  if (index >= 0) {
+    array.splice(index, 1);
+    return array;
+  } else {
+    array.push(ele);
+    return array;
+  }
 };
